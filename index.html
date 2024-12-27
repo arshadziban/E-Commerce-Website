@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Make sure body takes full height and uses flexbox */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* Content should take remaining space */
+        main {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+<!-- Navbar -->
+<nav class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center">
+            <img src="assets/logo.png" alt="E-Shop Logo" class="h-8 w-20 mr-2">
+        </a>
+        <div>
+            <a href="index.html" class="text-gray-700 hover:text-blue-500 mx-2 font-bold">Home</a>
+            <a href="contact.html" class="text-gray-700 hover:text-blue-500 mx-2 font-bold">Contact</a>
+            <a href="cart.html" class="text-gray-700 hover:text-blue-500 mx-2 font-bold">Cart</a>
+        </div>
+        <div>
+            <a href="login.html" class="text-gray-700 hover:text-blue-500 mx-2 font-bold">Log In</a>
+            <a href="register.html" class="text-gray-700 hover:text-blue-500 mx-2 font-bold">Register</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="bg-blue-500 py-20">
+    <div class="container mx-auto text-center text-white">
+        <h1 class="text-4xl font-bold mb-4">Welcome to E-Shop</h1>
+        <p class="text-lg mb-8">Find the best deals on your favorite products.</p>
+        
+        <!-- Search Bar -->
+        <div class="flex justify-center mb-8">
+            <input 
+                type="text" 
+                id="search-input" 
+                class="p-3 rounded-l-lg text-gray-800 w-1/3" 
+                placeholder="Search products..." 
+                aria-label="Search products"
+            >
+            <button 
+                id="search-button" 
+                class="bg-white text-blue-500 px-6 py-3 rounded-r-lg font-semibold hover:bg-gray-100"
+            >
+                Search
+            </button>
+        </div>
+
+        <a href="#shop" class="bg-white text-blue-500 px-6 py-2 rounded-full font-semibold hover:bg-gray-100">Shop Now</a>
+
+</section>
+
+<!-- Main content area -->
+<main>
+<!-- Products Section -->
+<!-- Products Section -->
+<section id="shop" class="py-16">
+    <div class="container mx-auto">
+        <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">OUR PRODUCTS</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- Product 1 -->
+            <div class="product bg-white shadow rounded-lg p-4 flex flex-col relative">
+                <div class="w-full aspect-w-1 aspect-h-1 mb-4">
+                    <img 
+                        src="assets/product1.jpg" 
+                        alt="Product 1" 
+                        class="w-full h-full object-cover rounded-md"
+                    >
+                </div>
+                <h3 class="text-base font-semibold text-gray-800 mb-2 truncate">
+                    Jabra Evolve 20 DUO SE USB Black Headphone
+                </h3>
+                <p class="text-sm text-gray-600 line-through">$50.00</p>
+                <p class="text-lg font-bold text-gray-800 mb-4">40.00</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <button
+                        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 add-to-cart-btn text-sm"
+                        data-name="Jabra Evolve 20 DUO SE USB Black Headphone"
+                        data-price="40.00"
+                        data-image="assets/product1.jpg"
+                    >
+                        Add to Cart
+                    </button>
+                    <a
+                        href="product-details.html?name=Jabra%20Evolve%2020%20DUO%20SE%20USB%20Black%20Headphone&price=40.00&image=assets/product1.jpg&description=Brand%20-%20Jabra%2C%20Model%20-%20Jabra%20Evolve%2020%20DUO%20SE%2C%20Type%20-%20Regular%2C%20Connectivity%20-%20Wired%2C%20Frequency%20Response%20(Hz%20-%20kHz)%20-%20150Hz%20-%207kHz%2C%20@Output%20S.P.L%20-10dBB%20(Speaker)%2C%20100Hz%20-%2010kHz%20@6dB%20(Microphone)%2C%20Sensitivity%20(dB)%20-%2093.6dB%20SPL%20%401kHz%20(Speaker)%2C%20F%3D1kHz%2C%20Pin%3D1Pa%2C%200dB%3D1V%2FPa%2C%20Min%3D-48dB%2C%20Max%3D-44dB%20(Microphone)%2C%20Impedance%20(ohm)%20-%2032%2B%2F-4.8%2C%20@1.0kHz%2C%20Memory%20Card%20Slot%20-%20No%2C%20Microphone%20-%20Yes%2C%20Noise%20Cancellation%20-%20Yes%2C%20Noise%20Cancellation%20Type%20-%20ENC%2C%20Lighting%20Effect%20-%20No%2C%20Waterproof%20-%20No%2C%20Dustproof%20-%20No%2C%20Rechargeable%20Battery%20-%20No%2C%20Charging%20Plug%20Type%20-%20No%2C%20Plug%20Type%20-%20USB%2C%20Color%20-%20Black%2C%20Feature%20-%20Made%20for%20voice%20calls%20and%20music.%20Passive%20noise%20cancellaion.%20Easy%20call%20management%20using%20control%20unit.%20HD%20Voice%2C%20PeakStop%20technology%2C%20UC%20plug-and-play%2C%20noise%20canceling%20microphone%2C%20HiFi%20sound%2C%20remote%20call%20control%2Feasy%20call%20management%2C%20Jabra%20software%20compatible%2C%20crystal%20clear%20sound%2C%20on%20the%20ear%20wearing%20style%2C%20passive%20noise%20cancellation.%20Evolve%2020SE%20with%20leatherette%20ear%20cushions.%2C%20Others%20-%20AC%20Power%20Supply%3A%20USB%20Power%20Supply%20By%20PC%2C%20Speaker%20Size%3A%20D%2028%20x%203.9mm.%20Speaker%20Max%20Input%20Power%3A%20Rated%20Input%205mW%20%400.4V%2C%20max%20input%2010mW%20%400.56V.%20Microphone%20type%3A%20Electret%20Condenser%20Microphone%2C%20Specialty%20-%20Clearer%20conversation%20for%20greater%20efficiency%3A%20Entry-level%20professional%20headset%20with%20easy%20call%20management%20and%20great%20sound%20for%20calls%20and%20music.%20Manage%20calls%20easily%3A%20Get%20easy%20access%20to%20the%20most%20used%20functions%2C%20like%20volume%20and%20mute.%20You%20can%20also%20answer%20and%20end%20calls%20quickly%20and%20easily%2C%20directly%20from%20the%20control%20unit.%20Flexible%20Plug%20and%20Play%20connectivity%3A%20Works%20straight%20out%20of%20the%20box.%20Installation%20is%20as%20easy%20as%20simply%20plugging%20it%20in%20to%20the%20USB%20port%20on%20your%20laptop.%20All%20day%20comfort%3A%20Built%20for%20style%20and%20comfort%20with%20soft%20leatherette%20ear%20cushions.%20Adjustable%20headband%20lets%20you%20find%20the%20perfect%20fit.%2C%20Warranty%20-%202%20year%2C%20Country%20of%20Origin%20-%20Denmark%2C%20Made%20in%2F%20Assemble%20-%20China"
+                        class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 text-sm"
+                    >
+                        See More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product bg-white shadow rounded-lg p-4 flex flex-col relative">
+                <div class="w-full aspect-w-1 aspect-h-1 mb-4">
+                    <img 
+                        src="assets/product2.jpg" 
+                        alt="Product 2" 
+                        class="w-full h-full object-cover rounded-md"
+                    >
+                </div>
+                <h3 class="text-base font-semibold text-gray-800 mb-2 truncate">
+                    EZVIZ H8C 4G (4mm) (3.0MP) Dome IP Camera
+                </h3>
+                <p class="text-sm text-gray-600 line-through">$80.00</p>
+                <p class="text-lg font-bold text-gray-800 mb-4">$65.00</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <button
+                        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 add-to-cart-btn text-sm"
+                        data-name="EZVIZ H8C 4G (4mm) (3.0MP) Dome IP Camera"
+                        data-price="65.00"
+                        data-image="assets/product2.jpg"
+                    >
+                        Add to Cart
+                    </button>
+                    <a
+                        href="product-details.html?name=EZVIZ%20H8C%204G%20(4mm)%20(3.0MP)%20Dome%20IP%20Camera&price=65.00&image=assets/product2.jpg&description=The%20EZVIZ%20H8C%204G%20Dome%20IP%20Camera%20offers%20high-quality%20video%20footage%20with%203.0MP%20resolution%20and%204G%20connectivity%20for%20reliable%20remote%20monitoring.%20It%20is%20perfect%20for%20home%20or%20business%20security%20with%20easy%20installation%20and%20remote%20viewing%20capabilities."
+                        class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 text-sm"
+                    >
+                        See More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product bg-white shadow rounded-lg p-4 flex flex-col relative">
+                <div class="w-full aspect-w-1 aspect-h-1 mb-4">
+                    <img 
+                        src="assets/product3.jpg" 
+                        alt="Product 3" 
+                        class="w-full h-full object-cover rounded-md"
+                    >
+                </div>
+                <h3 class="text-base font-semibold text-gray-800 mb-2 truncate">
+                    Oraimo Half In-Ear Wired Gold Earphone #OEP-320
+                </h3>
+                <p class="text-sm text-gray-600 line-through">$8.00</p>
+                <p class="text-lg font-bold text-gray-800 mb-4">$5.00</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <button
+                        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 add-to-cart-btn text-sm"
+                        data-name="Oraimo Half In-Ear Wired Gold Earphone"
+                        data-price="5.00"
+                        data-image="assets/product3.jpg"
+                    >
+                        Add to Cart
+                    </button>
+                    <a
+                     href="product-details.html?name=Oraimo%20Half%20In-Ear%20Wired%20Gold%20Earphone&price=19.99&image=assets/oriamo-earphone.jpg&description=The%20Oraimo%20Half%20In-Ear%20Wired%20Gold%20Earphone%20combines%20style%20and%20high-quality%20sound.%20Its%20sleek%20half%20in-ear%20design%20ensures%20a%20comfortable%20fit.%20With%20a%20gold%20finish%2C%20it%20adds%20a%20touch%20of%20elegance.%20The%20earphones%20provide%20clear%20sound%20and%20deep%20bass%2C%20perfect%20for%20music%20lovers.%20Its%20wired%20connection%20ensures%20stable%2C%20uninterrupted%20audio%20performance."
+                        class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 text-sm"
+                    >
+                        See More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product bg-white shadow rounded-lg p-4 flex flex-col relative">
+                <div class="w-full aspect-w-1 aspect-h-1 mb-4">
+                    <img 
+                        src="assets/product4.jpg" 
+                        alt="Product 4" 
+                        class="w-full h-full object-cover rounded-md"
+                    >
+                </div>
+                <h3 class="text-base font-semibold text-gray-800 mb-2 truncate">
+                    Hifuture FutureFit Ultra2 46mm Bluetooth Calling Blue Smart Watch
+
+                </h3>
+                <p class="text-sm text-gray-600 line-through">$120.00</p>
+                <p class="text-lg font-bold text-gray-800 mb-4">$100.00</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <button
+                        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 add-to-cart-btn text-sm"
+                        data-name="Hifuture FutureFit Ultra2 46mm Bluetooth Calling Blue Smart Watch"
+                        data-price="100.00"
+                        data-image="assets/product4.jpg"
+                    >
+                        Add to Cart
+                    </button>
+                    <a
+                        href="product-details.html?name=HiFuture%20FutureFit%20Ultra2%20Smartwatch&price=100.00&image=assets/product4.jpg&description=The%20HiFuture%20FutureFit%20Ultra2%20Smartwatch%20is%20designed%20for%20both%20male%20and%20female%20users.%20With%20a%2046mm%20square%20dial%20and%20a%201.85%20inch%20TFT%20display%20(240x280%20resolution)%2C%20it%20offers%20full%20screen%20touch%20functionality.%20Features%20include%20heart%20rate%20monitoring%2C%20blood%20oxygen%20tracking%2C%20sleep%20monitoring%2C%20and%20a%20durable%20design%20that%20is%20waterproof%2C%20dustproof%20but%20not%20shockproof.%20Bluetooth%20connectivity%20provides%20easy%20access%20to%20calling%20features%20with%20a%20300mAh%20battery%20for%20long%20usage%20time.%20The%20watch%20comes%20in%20a%20stylish%20blue%20color%20and%20includes%20a%20blue%20band.%20Warranty%20is%201%20year%20with%20original%20box%20and%20accessories."
+                        class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 text-sm"
+                    >
+                        See More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product bg-white shadow rounded-lg p-4 flex flex-col relative">
+                <div class="w-full aspect-w-1 aspect-h-1 mb-4">
+                    <img 
+                        src="assets/product5.jpg" 
+                        alt="Product 5" 
+                        class="w-full h-full object-cover rounded-md"
+                    >
+                </div>
+                <h3 class="text-base font-semibold text-gray-800 mb-2 truncate">
+                    CZUR ET16 Plus Smart Document & Book Scanner (A3, 16MP)
+                </h3>
+                <p class="text-sm text-gray-600 line-through">$355.00</p>
+                <p class="text-lg font-bold text-gray-800 mb-4">300.00</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <button
+                        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 add-to-cart-btn text-sm"
+                        data-name="CZUR ET16 Plus Smart Document & Book Scanner (A3, 16MP)"
+                        data-price="399.00"
+                        data-image="assets/product5.jpg"
+                    >
+                        Add to Cart
+                    </button>
+                    <a
+                        href="product-details.html?name=Samsung%20Galaxy%20Watch%205%20Pro&price=300.00&image=assets/product5.jpg&description=The%20Samsung%20Galaxy%20Watch%205%20Pro%20is%20a%20premium%20smartwatch%20with%20a%20robust%20design%2C%20advanced%20health%20features%20and%20long-lasting%20battery%20life."
+                        class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 text-sm"
+                    >
+                        See More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product bg-white shadow rounded-lg p-4 flex flex-col relative">
+                <div class="w-full aspect-w-1 aspect-h-1 mb-4">
+                    <img 
+                        src="assets/product6.jpg" 
+                        alt="Product 6" 
+                        class="w-full h-full object-cover rounded-md"
+                    >
+                </div>
+                <h3 class="text-base font-semibold text-gray-800 mb-2 truncate">
+                    TP-Link Archer C54 Ethernet Dual-Band AC1200 Mbps Wi-Fi Router</h3>
+                <p class="text-sm text-gray-600 line-through">$30.00</p>
+                <p class="text-lg font-bold text-gray-800 mb-4">$25.00</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <button
+                        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 add-to-cart-btn text-sm"
+                        data-name="TP-Link Archer C54 Ethernet Dual-Band AC1200 Mbps Wi-Fi Router"
+                        data-price="25.00"
+                        data-image="assets/product6.jpg"
+                    >
+                        Add to Cart
+                    </button>
+                    <a
+                    href="product-details.html?name=TP-Link%20Archer%20C54%20Router&price=25.00&image=assets/product6.jpg&description=The%20TP-Link%20Archer%20C54%20Router%20is%20a%20dual-band%20Wi-Fi%205%20router%20featuring%20wireless%20and%20Ethernet%20capabilities%2C%20with%204%20fixed%20antennas%20providing%20coverage%20for%20up%20to%201500%20sq.%20ft.%20and%20support%20for%2016-30%20concurrent%20users.%20Includes%20MIMO%20Technology%20and%20a%201-year%20warranty%20(without%20adapter)."
+                    class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 text-sm"
+                    >
+                        See More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product bg-white shadow rounded-lg p-4 flex flex-col relative">
+                <div class="w-full aspect-w-1 aspect-h-1 mb-4">
+                    <img 
+                        src="assets/product7.jpg" 
+                        alt="Product 7" 
+                        class="w-full h-full object-cover rounded-md"
+                    >
+                </div>
+                <h3 class="text-base font-semibold text-gray-800 mb-2 truncate">
+                    GColorful GT1030 2G V3 2GB GDDR5 Graphics Card #212327101806 (3 Year Warranty)
+                </h3>
+                <p class="text-sm text-gray-600 line-through">$110.00</p>
+                <p class="text-lg font-bold text-gray-800 mb-4">$98.00</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <button
+                        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 add-to-cart-btn text-sm"
+                        data-name="Colorful GT1030 2G V3 2GB GDDR5 Graphics Card #212327101806 (3 Year Warranty)                        "
+                        data-price="98.00"
+                        data-image="assets/product7.jpg"
+                    >
+                        Add to Cart
+                    </button>
+                    <a
+                    href="product-details.html?name=Colorful%20GT1030%202G%20V3%202GB%20Graphics%20Card&price=99.00&image=assets/product7.jpg&description=The%20Colorful%20GT1030%202G%20V3%20Graphics%20Card%20features%20NVIDIA%20GeForce%20GT1030%20chipset%20with%202GB%20of%20GDDR5%20memory.%20It%20supports%20dual%20display%20capability%2C%20consumes%20approximately%2030W%20power%2C%20and%20comes%20in%20a%20sleek%20black%20design.%20Includes%20a%203-year%20warranty%20(excludes%20mining%20use)."
+                    class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 text-sm"
+                    >
+                        See More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product bg-white shadow rounded-lg p-4 flex flex-col relative">
+                <div class="w-full aspect-w-1 aspect-h-1 mb-4">
+                    <img 
+                        src="assets/product8.jpg" 
+                        alt="Product 8" 
+                        class="w-full h-full object-cover rounded-md"
+                    >
+                </div>
+                <h3 class="text-base font-semibold text-gray-800 mb-2 truncate">
+                    Marvo Scorpion K602 Rainbow LED Wired Black Gaming Keyboard
+                </h3>
+                <p class="text-sm text-gray-600 line-through">$30.00</p>
+                <p class="text-lg font-bold text-gray-800 mb-4">$28.00</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <button
+                        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 add-to-cart-btn text-sm"
+                        data-name="Marvo Scorpion K602 Rainbow LED Wired Black Gaming Keyboard                        "
+                        data-price="28.00"
+                        data-image="assets/product8.jpg"
+                    >
+                        Add to Cart
+                    </button>
+                    <a
+                    href="product-details.html?name=Marvo%20Scorpion%20K602%20Gaming%20Keyboard&price=28.00&image=assets/product8.jpg&description=The%20Marvo%20Scorpion%20K602%20Gaming%20Keyboard%20is%20a%20wired%20gaming%20keyboard%20with%20a%20USB%20interface%2C%20featuring%20112%20keys%20and%20single%20mode%20lighting.%20It%20is%20designed%20for%20Windows%20OS%2C%20comes%20in%20black%2C%20and%20includes%20a%201-year%20warranty."
+                    class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 text-sm"
+                    >
+                        See More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product bg-white shadow rounded-lg p-4 flex flex-col relative">
+                <div class="w-full aspect-w-1 aspect-h-1 mb-4">
+                    <img 
+                        src="assets/product9.jpg" 
+                        alt="Product 9" 
+                        class="w-full h-full object-cover rounded-md"
+                    >
+                </div>
+                <h3 class="text-base font-semibold text-gray-800 mb-2 truncate">
+                    Canon EOS 2000D Digital SLR Camera with EF-S 18-55 mm f/3.5-5.6 IS II Lens
+                </h3>
+                <p class="text-sm text-gray-600 line-through">$560.00</p>
+                <p class="text-lg font-bold text-gray-800 mb-4">$470.00</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <button
+                        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 add-to-cart-btn text-sm"
+                        data-name="Canon EOS 2000D Digital SLR Camera with EF-S 18-55 mm f/3.5-5.6 IS II Lens"
+                        data-price="470.00"
+                        data-image="assets/product9.jpg"
+                    >
+                        Add to Cart
+                    </button>
+                    <a
+                    href="product-details.html?name=Canon%20EOS%202000D%20DSLR%20Camera%20With%20Lens&price=470.00&image=assets/product9.jpg&description=The%20Canon%20EOS%202000D%20is%20a%20DSLR%20camera%20with%20a%2024.1MP%20CMOS%20sensor%20and%20an%20EF-S%2018-55mm%20f/3.5-5.6%20IS%20II%20lens.%20It%20features%20an%20APS-C%20sensor%2C%20a%203.0-inch%20TFT%20LCD%20display%2C%20built-in%20WiFi%2C%20and%20full%20HD%20video%20recording%20capabilities.%20With%20a%20pop-up%20flash%2C%20ISO%20range%20of%20100-6400%2C%20and%20compatibility%20with%20all%20EF%20and%20EF-S%20lenses%2C%20this%20camera%20is%20ideal%20for%20photography%20enthusiasts.%20No%20warranty%20included."
+                    class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 text-sm"
+                    >
+                        See More
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="product bg-white shadow rounded-lg p-4 flex flex-col relative">
+                <div class="w-full aspect-w-1 aspect-h-1 mb-4">
+                    <img 
+                        src="assets/product10.jpg" 
+                        alt="Product 10" 
+                        class="w-full h-full object-cover rounded-md"
+                    >
+                </div>
+                <h3 class="text-base font-semibold text-gray-800 mb-2 truncate">
+                    Xtreme S-Q90 Wired Black & Red Multimedia Headphone
+                </h3>
+                <p class="text-sm text-gray-600 line-through">$130.00</p>
+                <p class="text-lg font-bold text-gray-800 mb-4">$120.00</p>
+                <div class="flex justify-between items-center mt-auto">
+                    <button
+                        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 add-to-cart-btn text-sm"
+                        data-name="Xtreme S-Q90 Wired Black & Red Multimedia Headphone                        "
+                        data-price="120.00"
+                        data-image="assets/product10.jpg"
+                    >
+                        Add to Cart
+                    </button>
+                    <a
+                    href="product-details.html?name=Xtreme%20S-Q90%20Multimedia%20Headphone&price=120.00&image=assets/product10.jpg&description=The%20Xtreme%20S-Q90%20is%20a%20wired%20multimedia%20headphone%20with%20a%20USB%20connection%20type.%20It%20features%20a%20sleek%20black%20and%20red%20design%20and%20is%20suitable%20for%20various%20multimedia%20applications.%20No%20lighting%20effects%2C%20waterproof%2C%20or%20dustproof%20capabilities%20are%20mentioned.%20This%20product%20comes%20with%20no%20warranty."
+                    class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 text-sm"
+                    >
+                        See More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 py-6">
+    <div class="container mx-auto text-center text-gray-400">
+        <p>&copy; 2024 E-Shop. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Cart logic
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function addToCart(product) {
+        cart.push(product);
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".add-to-cart-btn");
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                const product = {
+                    name: button.dataset.name,
+                    price: button.dataset.price,
+                    image: button.dataset.image,
+                };
+                addToCart(product);
+            });
+        });
+
+        // Search functionality
+        document.getElementById('search-button').addEventListener('click', function() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const products = document.querySelectorAll('.product'); // Select all products
+
+            products.forEach(product => {
+                const productName = product.querySelector('h3').textContent.toLowerCase();
+                if (productName.includes(query)) {
+                    product.style.display = 'block';  // Show the product if it matches the query
+                } else {
+                    product.style.display = 'none';   // Hide the product if it doesn't match
+                }
+            });
+        });
+
+        // Redirect based on selected category
+        document.getElementById('category').addEventListener('change', function() {
+            window.location.href = this.value;
+        });
+    });
+</script>
+</body>
+</html>

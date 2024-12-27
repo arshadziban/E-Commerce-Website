@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - E-Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/logo.png" alt="E-Shop Logo" class="h-8 w-20 mr-2">
+            </a>
+            <div>
+                <a href="index.html" class="text-gray-700 hover:text-blue-500 mx-2 font-bold">Home</a>
+                <a href="contact.html" class="text-gray-700 hover:text-blue-500 mx-2 font-bold">Contact</a>
+                <a href="cart.html" class="text-gray-700 hover:text-blue-500 mx-2 font-bold">Cart</a>
+            </div>
+            <div>
+                <a href="login.html" class="text-gray-700 hover:text-blue-500 mx-2 font-bold">Log In</a>
+                <a href="register.html" class="text-gray-700 hover:text-blue-500 mx-2 font-bold">Register</a>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Cart Section -->
+    <main>
+        <section class="py-16">
+            <div class="container mx-auto">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Your Cart</h2>
+                <div class="bg-white shadow rounded-lg p-4">
+                    <div id="cart-items" class="mb-4">
+                        <!-- Cart items will be injected here dynamically -->
+                    </div>
+                    <!-- Cart Summary -->
+                    <div id="cart-summary" class="text-right hidden">
+                        <p class="text-lg font-semibold text-gray-800" id="total-amount"></p>
+                        <button class="bg-blue-500 text-white px-6 py-2 rounded mt-4 hover:bg-blue-600">Proceed to Checkout</button>
+                    </div>
+                    <p id="empty-cart-message" class="text-center text-gray-600">Your cart is currently empty.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6">
+        <div class="container mx-auto text-center text-gray-400">
+            <p>&copy; 2024 E-Shop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Load cart from localStorage
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Select DOM elements
+        const cartItemsContainer = document.getElementById("cart-items");
+        const totalAmountElement = document.getElementById("total-amount");
+        const cartSummary = document.getElementById("cart-summary");
+        const emptyCartMessage = document.getElementById("empty-cart-message");
+
+        function updateCartDisplay() {
+            // Clear the container
+            cartItemsContainer.innerHTML = "";
+
+            if (cart.length === 0) {
+                cartSummary.classList.add("hidden");
+                emptyCartMessage.classList.remove("hidden");
+                return;
+            }
+
+            // Show cart summary
+            cartSummary.classList.remove("hidden");
+            emptyCartMessage.classList.add("hidden");
+
+            let total = 0;
+
+            // Add each item to the DOM
+            cart.forEach((product, index) => {
+                total += parseFloat(product.price);
+
+                const cartItem = document.createElement("div");
+                cartItem.classList.add(
+                    "flex",
+                    "justify-between",
+                    "items-center",
+                    "mb-4",
+                    "border-b",
+                    "pb-4"
+                );
+
+                cartItem.innerHTML = `
+                    <div class="flex items-center">
+                        <img src="${product.image}" alt="${product.name}" class="w-20 h-20 object-cover mr-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">${product.name}</h3>
+                            <p class="text-gray-600">$${product.price}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="text-red-500 hover:underline" data-index="${index}">Remove</button>
+                    </div>
+                `;
+
+                cartItemsContainer.appendChild(cartItem);
+            });
+
+            // Update total amount
+            totalAmountElement.textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        // Event delegation for remove buttons
+        cartItemsContainer.addEventListener("click", (event) => {
+            if (event.target.tagName === "BUTTON" && event.target.dataset.index !== undefined) {
+                const index = parseInt(event.target.dataset.index, 10);
+                removeFromCart(index);
+            }
+        });
+
+        // Initial render
+        updateCartDisplay();
+    </script>
+</body>
+</html>
